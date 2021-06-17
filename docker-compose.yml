@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mongodb:
+    container_name: mhp-mongodb
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+
+  mailhog:
+    container_name: mhp-mailhog
+    image: mailhog/mailhog:latest
+    restart: always
+    command: -invite-jim -jim-accept=1.0 -jim-disconnect=0 -jim-linkspeed-affect=0 -jim-reject-sender=0 -jim-reject-recipient=0 -jim-reject-auth=0
+    ports:
+      - 1025:1025
+      - 8025:8025

@@ -1,0 +1,13 @@
+spring:
+  mail:
+    host: localhost
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          port: 1025
+          auth: true
+          starttls:
+            enable: true
+            required: true
